@@ -1,0 +1,21 @@
+
+body {
+  background: #dbe3ea;
+}
+.mtooltable {
+  background: #b1c2d0;
+  border: 1px solid #888;
+  width:85%; 
+  padding: 2px; 
+  border-spacing: 16px; 
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.memailrow {
+/*  background: #ffffff;*/
+}
+
+.mpublisherrow {
+  background: #f7f9fa;
+}
