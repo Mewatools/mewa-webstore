@@ -1,21 +1,184 @@
-
 body {
-  background: #dbe3ea;
-}
-.mtooltable {
-  background: #b1c2d0;
-  border: 1px solid #888;
-  width:85%; 
-  padding: 2px; 
-  border-spacing: 16px; 
-  margin-left:auto;
-  margin-right:auto;
+  background: #2b343d;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  /* Reset HTML default styles */
+  margin: 0;
+  padding: 0;
+  /* Make stuff max width and height */
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.memailrow {
-/*  background: #ffffff;*/
+/* Design system elements */
+
+h1 {
+  color: #ffffff;
+  font-size: 2.25rem;
 }
 
-.mpublisherrow {
-  background: #f7f9fa;
+button {
+  color: #ffffff;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border-color: #ffffff;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/* Semantic element styles */
+
+header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+header img {
+  margin-right: 1rem;
+}
+
+header div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 20rem;
+}
+
+.center-margins {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mewa-scripts-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.item-card {
+  color: #ffffff;
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 0.5px solid #7c7c7c;
+}
+
+.item-card p {
+  max-width: 25rem;
+}
+
+.item-card img {
+  margin-right: 4rem;
+  border-radius: 0.5rem;
+}
+
+/* Media Queries for Responsive Layouts */
+
+/* Medium Screens */
+@media screen and (max-width: 768px) {
+  h1 {
+    color: #ffffff;
+    font-size: 2rem;
+  }
+  #patreon-image {
+    display: none;
+  }
+  header div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 2rem;
+  }
+  img {
+    max-width: 25rem;
+    height: auto;
+  }
+
+  .mewa-scripts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item-card {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid #7c7c7c;
+  }
+  .item-card p {
+    max-width: 25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .item-card img {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Large Screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+  header div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 10rem;
+  }
+  .mewa-scripts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item-card {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid #7c7c7c;
+  }
+  .item-card p {
+    max-width: 25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .item-card img {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
 }
