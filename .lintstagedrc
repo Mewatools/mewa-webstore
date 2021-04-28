@@ -1,0 +1,7 @@
+# Configure to run prettier and overwrite any staged files that match regex
+# Then stage new formatted files
+{
+  "['*.js', '*.html', '*.md', '*.css']": [
+    "prettier --write"
+  ]
+}
