@@ -12,6 +12,21 @@ body {
   max-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+  /* Pure CSS fade-in transitions */
+  -webkit-animation: fadeIn ease-in 1s;
+  -moz-animation: fadeIn ease-in 1s;
+  -o-animation: fadeIn ease-in 1s;
+  -ms-animation: fadeIn ease-in 1s;
+  animation: fadeIn ease-in 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Design system elements */
@@ -27,7 +42,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  cursor:pointer;
+  cursor: pointer;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   border: 1px solid white;
@@ -39,20 +54,23 @@ h1 {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-
-.shadow	{
-	--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.card-divider {
+  padding-bottom: 5rem;
+  border-bottom: 0.5px solid #7c7c7c;
+}
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-md {
-	--tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lg {
-	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /* Semantic element styles */
@@ -64,6 +82,17 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+
+footer {
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+footer a {
+  color: #93c5fd;
 }
 
 header img {
@@ -103,8 +132,6 @@ main {
   justify-content: left;
   flex-direction: row;
   margin-bottom: 5rem;
-  padding-bottom: 5rem;
-  border-bottom: 0.5px solid #7c7c7c;
 }
 
 .item-card p {
