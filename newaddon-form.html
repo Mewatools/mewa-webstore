@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Mewa WebStore</title>
+    <link rel="stylesheet" type="text/css" href="style/tools.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
+    <header>
+      <div class="margin-auto header-logo">
+        <img src="mewa-48.png" alt="This is Mewa&#39;s official logo, shaped like an M." width="48px" height="33px">
+        <h1>Mewa Web Store</h1>
+      </div>
+
+
+
+<br><p>
+       </p><table style="width: 100%" border="0" cellpadding="6">
+       <tbody><tr class="memailrow"><td>ola@mewa.club | <a href="http://localhost/tools/logout.php">Logout</a> </td></tr><tr class="mpublisherrow"> <td> Publisher: Bruce Lee<br>
+           <form name="publisherbuttonsform" action="" method="post" enctype="multipart/form-data">
+           <input type="submit" value="New Tool" name="OnNewTool">
+           <input type="submit" value="My Tools" name="OnMyTools">
+           </form>
+           </td></tr></tbody></table><p></p><br>
+
+
+    </header>
+    <main>
+
+   
+		
+	 <form name="newform" action="http://localhost/tools/index.php" method="post" enctype="multipart/form-data">
+        <div class="container">
+        <table style="border:0px solid black;margin-left:auto;margin-right:auto;">
+			
+	    <tbody><tr><td colspan="2" style="width:70%; text-align: center;">
+		   <p>
+        Have you created a <a href="https://en.wikibooks.org/wiki/Mewa_User%27s_Guide/Extending_Mewa_with_custom_shaders">Mewa script</a>?<br>To publish it all you need to do is fill the form below.<br>
+        </p><br>
+        </td></tr>
+			
+        <tr>
+        <td style="text-align:right"><strong>Name</strong><br>Usually a Mewa node name</td>
+        <td><input type="text" name="node_name" value="" required="">   </td>
+        </tr>
+                
+        <tr>
+        <td style="text-align:right;vertical-align:top;"><strong>Description</strong><br>Accepts html source</td>
+        <td> <textarea name="description" cols="80" rows="5" required=""></textarea>   </td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:right;vertical-align:top;"><strong>More Details</strong><br>This is optional<br>It adds a "Show More" button<br>Leave empty to disable</td>
+        <td> <textarea name="extra_html" cols="80" rows="5">&lt;center&gt; My Patreon page &lt;p&gt;&lt;a href='www.patreon.com/2'&gt;Bruce Lee&lt;/a&gt; &lt;/p&gt;&lt;/center&gt;</textarea>   </td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:right;vertical-align:top;"><strong>Script</strong><br>Content of the Mewa script file<br><a href="https://en.wikibooks.org/wiki/Mewa_User%27s_Guide/Extending_Mewa_with_custom_shaders">More on Mewa scripts</a></td>
+        <td> <textarea name="mfx" cols="80" rows="10" required=""></textarea> </td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:right"><strong>Tool tip</strong></td>
+        <td><input type="text" name="tooltip" value="" required="">  one line description that will be shown inside Mewa </td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:right"><strong>Show source</strong></td>
+        <td><input type="checkbox" name="show_source" value="Yes" checked="">  Adds button to show source </td>
+        </tr>
+        
+         <tr>
+        <td style="text-align:right;"><strong>Image</strong><br>png format with 512x256 size</td>
+        <td> <input type="file" name="fileToUpload" id="fileToUpload"> </td>
+        </tr>
+        
+        <tr><td colspan="2" align="center">
+        <input type="submit" value="Submit" name="OnSubmitNew">
+        </td></tr>
+        
+        </tbody></table>
+        </div>    
+        </form>  
+ 
+	
+	 </main>
+    <footer></footer>
+    <script type="text/javascript" async="" src="./newaddon-form_files/analytics.js"></script><script async="" src="./newaddon-form_files/js"></script>
+    <script src="./newaddon-form_files/index.js"></script>
+  
+
+
+</body></html>
