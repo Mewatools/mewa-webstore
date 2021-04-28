@@ -2,7 +2,6 @@
 # Then stage new formatted files
 {
   "**/*.+(html|js|css|md)": [
-    "prettier --write",
-    "git add"
+    "prettier --write"
   ]
 }
