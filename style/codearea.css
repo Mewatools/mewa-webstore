@@ -1,0 +1,88 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.shadow {
+  /* CSS was shamelessly copied from Philipp Brumm's original @ https://shadows.brumm.af/ */
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+#container {
+  background-color: #262831;
+  position: relative;
+  height: 38rem;
+  width: 38rem;
+  max-width: 42rem;
+  border-radius: 0.25rem;
+  /* Pure CSS fade-in transitions */
+  -webkit-animation: fadeIn ease-in 1.5s;
+  -moz-animation: fadeIn ease-in 1.5s;
+  -o-animation: fadeIn ease-in 1.5s;
+  -ms-animation: fadeIn ease-in 1.5s;
+  animation: fadeIn ease-in 1.5s;
+}
+
+.LineNumbers-active,
+.LineNumbers-container,
+.LineNumbers-line {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  list-style: none;
+  word-break: break-word;
+}
+
+.LineNumbers-active {
+  display: inline-block;
+  padding: 0.625em;
+  width: calc(100% - 3em);
+  max-width: calc(100% - 3em);
+  height: 100%;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: "Fira Code", "Roboto Mono", monospace;
+  resize: none;
+  white-space: pre-wrap;
+  background-color: #313440;
+  color: #abb2bf;
+  /* Text Color */
+}
+
+.LineNumbers-container {
+  width: 3em;
+  max-width: 3em;
+  padding: 0.6875em 0.3125em 2.1875em;
+  height: 100%;
+  overflow: hidden;
+  display: inline-block;
+  counter-reset: line;
+}
+
+.LineNumbers-line {
+  width: 100%;
+  display: block;
+  text-align: right;
+  line-height: 1.5;
+  font-size: 1em;
+  color: #aeaeae;
+}
+
+.LineNumbers-line::before {
+  counter-increment: line;
+  content: counter(line);
+  font-size: 1em;
+  user-select: none;
+  font-family: "Fira Code", monospace;
+}
