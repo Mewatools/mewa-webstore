@@ -18,22 +18,123 @@ body {
   -o-animation: fadeIn ease-in 1s;
   -ms-animation: fadeIn ease-in 1s;
   animation: fadeIn ease-in 1s;
+  /* Scrollbar styling to be more minimalist */
+  scrollbar-width: thin;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-/* Design system elements */
+body::-webkit-scrollbar {
+  width: 15px;
+  /* width of the entire scrollbar */
+}
 
-h1 {
+body::scrollbar {
+  width: 15px;
+  /* width of the entire scrollbar */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  line-height: 1.5;
+}
+
+.center {
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Design system elements */
+li {
+  margin-top: 0.5rem;
+}
+
+ul {
+  padding: 0rem 0rem 0rem 1rem;
+}
+
+a {
+  color: #93c5fd;
+}
+
+h1,
+h2,
+h3 {
   color: #ffffff;
   font-size: 2.25rem;
+}
+
+/* ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+} */
+details {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  border: 0.5px solid #7c7c7c;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+details[open] {
+  background-color: #2d353d;
+  transition: background-color 1s ease;
+}
+
+summary {
+  display: block;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+summary::before,
+summary::after {
+  width: 0.75em;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  content: '';
+  background-color: currentColor;
+  text-align: right;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+}
+
+summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 .link-button {
@@ -46,6 +147,22 @@ h1 {
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   border: 1px solid white;
+}
+
+.warning-button {
+  color: #ef4444;
+  font-weight: bold;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ef4444;
+}
+
+.font-small {
   font-size: 0.8rem;
 }
 
@@ -58,7 +175,8 @@ h1 {
   padding-bottom: 5rem;
   border-bottom: 0.5px solid #7c7c7c;
 }
-.shadow {
+
+.shadow-regular {
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -74,7 +192,6 @@ h1 {
 }
 
 /* Semantic element styles */
-
 header {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -84,15 +201,15 @@ header {
   flex-direction: row;
 }
 
+header h1 {
+  font-weight: medium;
+}
+
 footer {
   padding-bottom: 6rem;
   display: flex;
   justify-content: center;
   color: white;
-}
-
-footer a {
-  color: #93c5fd;
 }
 
 header img {
@@ -105,6 +222,14 @@ header div {
   align-items: center;
   flex-direction: row;
   margin-right: 20rem;
+}
+
+header .adjusted-margins {
+  margin-right: 30rem;
+}
+
+.item-card-description {
+  margin-left: 6rem;
 }
 
 .center-margins {
@@ -120,10 +245,31 @@ main {
   align-items: center;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .mewa-scripts-list {
   display: flex;
   flex-direction: column;
   align-items: left;
+}
+
+.mewa-scripts-details {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mewa-scripts-details h2 {
+  margin-bottom: 4rem;
 }
 
 .item-card {
@@ -132,6 +278,10 @@ main {
   justify-content: left;
   flex-direction: row;
   margin-bottom: 5rem;
+}
+
+.less-spacing {
+  margin-bottom: 3rem;
 }
 
 .item-card p {
@@ -143,90 +293,347 @@ main {
   border-radius: 0.5rem;
 }
 
+.source-code-editor {
+  margin-right: 5rem;
+}
+
+.accordions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addon-details {
+  color: white;
+}
+
+.buttons-space {
+  margin-right: 2rem;
+}
+
 /* Media Queries for Responsive Layouts */
 
-/* Medium Screens */
+/* Small Screens < 768px */
 @media screen and (max-width: 768px) {
   h1 {
     color: #ffffff;
     font-size: 2rem;
   }
+
   #patreon-image {
     display: none;
   }
-  header div {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    margin-right: 2rem;
-  }
-  img {
-    max-width: 25rem;
-    height: auto;
+
+  .link-button {
+    margin: auto;
   }
 
-  .mewa-scripts-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .item-card {
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+  .card-divider {
+    padding-bottom: 6rem;
     border-bottom: 0.5px solid #7c7c7c;
   }
-  .item-card p {
-    max-width: 25rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+
+  footer p {
+    max-width: 20rem;
   }
 
-  .item-card img {
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
+  header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
   }
-}
 
-/* Large Screens */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  h1 {
-    color: #ffffff;
-    font-size: 1.5rem;
+  header .adjusted-margins {
+    margin: auto;
   }
+
   header div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    margin-right: 10rem;
+    margin: auto;
   }
+
+  img {
+    max-height: 12.5rem;
+    align-self: center;
+  }
+
   .mewa-scripts-list {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .item-card {
     color: #ffffff;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 0.5px solid #7c7c7c;
+    margin-bottom: 6rem;
   }
+
+  .item-card-description {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .item-card p {
-    max-width: 25rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    max-width: 20rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0;
   }
 
   .item-card img {
     margin-bottom: 2rem;
     border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0;
+  }
+
+  h5 {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0;
+  }
+
+  .source-code-editor {
+    display: none;
+  }
+
+  .mewa-scripts-details h2 {
+    display: none;
+  }
+
+  details {
+    width: 15rem;
+  }
+
+  .addon-details-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons-space {
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Medium Screens 768px to 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  img {
+    max-height: 25rem;
+    align-self: center;
+  }
+
+  .link-button {
+    margin: auto;
+  }
+
+  .card-divider {
+    border-bottom: 0.5px solid #7c7c7c;
+  }
+
+  footer p {
+    max-width: 30rem;
+  }
+
+  header div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  header .adjusted-margins {
+    margin-right: 6rem;
+  }
+
+  .mewa-scripts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-card {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+
+  .item-card-description {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .item-card p {
+    max-width: 25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0;
+  }
+
+  .item-card img {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0;
+  }
+
+  h5 {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0;
+  }
+  .source-code-editor {
+    display: none;
+  }
+
+  .mewa-scripts-details h2 {
+    display: none;
+  }
+
+  details {
+    width: 15rem;
+  }
+
+  li p {
+    text-align: left;
+  }
+
+  .addon-details-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .buttons-space {
+    margin-right: 2rem;
+  }
+
+  .accordions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* Large Screens 1024px to 1280px */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  h1 {
+    color: #ffffff;
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0;
+  }
+
+  h5 {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .font-small {
+    font-size: 0.7rem;
+  }
+
+  header div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 15rem;
+  }
+
+  header .adjusted-margins {
+    margin-right: 20rem;
+  }
+
+  img {
+    max-height: 12.5rem;
+    align-self: center;
+  }
+
+  .item-card-description {
+    margin-left: 1rem;
+  }
+
+  .source-code-editor {
+    display: none;
+  }
+
+  .mewa-scripts-details h2 {
+    display: none;
+  }
+
+  details {
+    width: 15rem;
+    margin-right: 3rem;
+  }
+
+  .addon-details-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .accordions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
