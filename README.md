@@ -41,4 +41,3 @@ This will open up a hot-reloading development server at <http://localhost:8080> 
 Note that this project uses [Prettier](https://www.prettier.io>), and automatically formats code on each commit.
 
 Behind the Mewa Webstore is a PHP server that generates the WebStore HTML. To facilitate the integration with the server, HTML source should be kept as simple and as minimal as possible.
-

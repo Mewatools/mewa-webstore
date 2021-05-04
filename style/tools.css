@@ -42,7 +42,12 @@ body::scrollbar {
   /* width of the entire scrollbar */
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   line-height: 1.5;
 }
 
@@ -65,7 +70,9 @@ a {
   color: #93c5fd;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #ffffff;
   font-size: 2.25rem;
 }
@@ -83,8 +90,7 @@ details {
   border-radius: 0.8rem;
   font-size: 1rem;
   border: 0.5px solid #7c7c7c;
-  */ background-color: white;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   width: 20rem;
   margin-bottom: 3rem;
   line-height: 1.5;
@@ -105,13 +111,14 @@ summary {
   cursor: pointer;
 }
 
-summary::before, summary::after {
+summary::before,
+summary::after {
   width: 0.75em;
   height: 2px;
   position: absolute;
   top: 50%;
   right: 0;
-  content: "";
+  content: '';
   background-color: currentColor;
   text-align: right;
   transform: translateY(-50%);
@@ -143,7 +150,7 @@ summary::-webkit-details-marker {
 }
 
 .warning-button {
-  color: #EF4444;
+  color: #ef4444;
   font-weight: bold;
   background-color: transparent;
   text-align: center;
@@ -152,7 +159,7 @@ summary::-webkit-details-marker {
   cursor: pointer;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
-  border: 1px solid #EF4444;
+  border: 1px solid #ef4444;
 }
 
 .font-small {
@@ -435,7 +442,12 @@ main {
     font-size: 1.5rem;
   }
 
-  h1, h2, h3, h4, h5, p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
     text-align: center;
     line-height: 1.5;
   }
