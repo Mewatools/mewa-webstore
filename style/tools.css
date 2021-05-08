@@ -206,7 +206,7 @@ header h1 {
 }
 
 footer {
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
   display: flex;
   justify-content: center;
   color: white;
@@ -239,10 +239,49 @@ header .adjusted-margins {
 
 main {
   padding-top: 2rem;
-  padding-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#pagination-buttons {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pagination-buttons a {
+  color: white;
+  text-decoration: none;
+}
+
+#pagination-buttons button {
+  color: #ffffff;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+}
+
+.prev-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 2rem;
+}
+
+.next-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .flex-col {
