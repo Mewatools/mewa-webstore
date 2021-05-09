@@ -4,7 +4,7 @@ This is the official store for [Mewa](https://www.mewatools.com/), the new video
 
 ## About
 
-This site contains the source code of the [Mewa webstore](). To visit the live version of the site, go to <https://mewatools.com/tools/> 
+This site contains the source code of the [Mewa webstore](). To visit the live version of the site, go to <https://mewatools.com/webstore/> 
 
 If you would like to contribute or make changes to the site, follow these steps:
 
