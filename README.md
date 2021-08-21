@@ -18,9 +18,9 @@ You're ready to begin development!
 ### Development
 
 There are 3 test reference pages:
-- [addon-details.html]()
-- [addon-list.html]()
-- [newaddon-form.html]()
+- [addon-details.html](addon-details.html)
+- [addon-list.html](addon-list.html)
+- [newaddon-form.html](newaddon-form.html)
 
 Open the test pages to check the current state of the Mewa WebStore template.
 
