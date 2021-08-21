@@ -25,13 +25,9 @@
       <h1>Mewa Web Store</h1>
     </div>
 
-</br>
-<a class="link-button font-small" onclick="#" >Home</a>
-<p>john@gmail.com | <a href='#'>Logout</a>Publisher: John Nothingate<br>
-           <form name = 'publisherbuttonsform' action='index.php' method = 'post' enctype = 'multipart/form-data' >
-           <input type='submit' value='New Addon' name='OnNewTool'>
-           <input type='submit' value='My Addons' name='OnMyTools'>
-           </form></p></br>
+
+  <a class="link-button font-small" href="#">Browse</a>
+  <a href="#"> <img id="patreon-image" src="assets/login_with_discord.png"/></a>
            
   </header>
   <main class="flex-col">
@@ -41,7 +37,7 @@
         <div class="item-card-description extra-margins">
           <h2>HexPixelate</h2>
           <h5>by <em>Mewatools</em></h5>
-          <p>Pixelates image using a hexagonal pattern. The size of the pixel is adjustable.</p>
+          <p>This node Pixelates an image using an hexagonal pattern. The size of the pixel is adjustable.</p>
           <!--The likes button should be an icon-->
           <p>Likes: 1</p>
         </div>
@@ -49,26 +45,85 @@
     </section>
     <section class="mewa-scripts-details">
 
-      <h2 class="center">Overview</h2>
+      <h2 class="center"></h2>
       <div class="flex-row">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Il5K32ktx8o"></iframe>
       </div>
       <p></p>
-      <p>This is plain html with a <a href="#">link</a> in the middle.</p>
+      <p>This is plain html text with a <a href="#">link</a> in the middle.</p>
+      <p>This is a long text ... sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg asdfasdf asdf asdf asd fasd sdfg sdfg sdfg sdfg sdfg sdfg sdfg sdfg df</p>
       <p></p>
 
-      <h2 class="center">Source Code</h2>
+      <h2 class="center">HexPixelate Source Code</h2>
       <div class="flex-row">
-          <div  id="container" class="shadow">
-            <textarea>THIS IS A MEWA SCRIPT</textarea>
+          <div  id="container" class="shadow"
+          style="overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">            
+          
+          <!-- HTML generated using hilite.me (style: VIM) -->
+<pre style="margin: 0; line-height: 125%"><span style="color: #000080">// Adapted to Mewa by Hugo 2021 (hugo@mewatools.com)</span>
+<span style="color: #000080">// Ether by nimitz 2014 (twitter: @stormoid)</span>
+<span style="color: #000080">// https://www.shadertoy.com/view/MsjSW3</span>
+<span style="color: #000080">// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</span>
+<span style="color: #000080">// Contact the author for other licensing options</span>
+
+<span style="color: #cccccc">shaderSource</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;</span>
+<span style="color: #cd0000">    #define t iTime</span>
+<span style="color: #cd0000">    mat2 m(float a){float c=cos(a), s=sin(a);return mat2(c,-s,s,c);}</span>
+<span style="color: #cd0000">    float map(vec3 p){</span>
+<span style="color: #cd0000">        p.xz*= m(t*0.4);p.xy*= m(t*0.3);</span>
+<span style="color: #cd0000">        vec3 q = p*2.+t;</span>
+<span style="color: #cd0000">        return length(p+vec3(sin(t*0.7)))*log(length(p)+1.) + sin(q.x+sin(q.z+sin(q.y)))*0.5 - 1.;</span>
+<span style="color: #cd0000">    }</span>
+<span style="color: #cd0000">    </span>
+<span style="color: #cd0000">    void mainImage( out vec4 fragColor, in vec2 fragCoord ){	</span>
+<span style="color: #cd0000">    	vec2 p = fragCoord.xy - vec2(.9,.5);</span>
+<span style="color: #cd0000">        vec3 cl = vec3(0.);</span>
+<span style="color: #cd0000">        float d = uDelta; // initial value 2.5</span>
+<span style="color: #cd0000">        for(int i=0; i&lt;=5; i++)	{</span>
+<span style="color: #cd0000">    		vec3 p = vec3(0,0,5.) + normalize(vec3(p, -1.))*d;</span>
+<span style="color: #cd0000">            float rz = map(p);</span>
+<span style="color: #cd0000">    		float f =  clamp((rz - map(p+.1))*0.5, -.1, 1. );</span>
+<span style="color: #cd0000">            vec3 l = uColor + vec3(5., 2.5, 3.)*f;</span>
+<span style="color: #cd0000">            cl = cl*l + smoothstep(2.5, .0, rz)*.7*l;</span>
+<span style="color: #cd0000">    		d += min(rz, 1.);</span>
+<span style="color: #cd0000">    	}</span>
+<span style="color: #cd0000">        fragColor = vec4(cl, 1.);</span>
+<span style="color: #cd0000">    }&quot;</span><span style="color: #cccccc">;</span>
+    
+
+<span style="color: #cccccc">node</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">ShaderNode(</span> <span style="color: #cccccc">shaderSource,</span> <span style="color: #cd0000">&quot;Ether&quot;</span> <span style="color: #cccccc">);</span>
+<span style="color: #cccccc">node.setInputMapping(</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;iResolution&quot;</span><span style="color: #cccccc">);</span>
+<span style="color: #cccccc">node.setHelpPage(</span><span style="color: #cd0000">&quot;https://www.shadertoy.com/view/MsjSW3&quot;</span><span style="color: #cccccc">);</span>
+
+<span style="color: #000080">// controls</span>
+<span style="color: #cccccc">deltaControl</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">node.addFloatControl(</span><span style="color: #cd0000">&quot;uDelta&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2.5</span><span style="color: #cccccc">);</span>
+<span style="color: #cccccc">deltaControl.setName(</span><span style="color: #cd0000">&quot;Delta&quot;</span><span style="color: #cccccc">);</span>
+<span style="color: #cccccc">deltaControl.setStep(</span><span style="color: #cd00cd">0.01</span><span style="color: #cccccc">);</span>
+<span style="color: #cccccc">deltaControl.setRange(</span><span style="color: #3399cc">-</span><span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">);</span>
+
+<span style="color: #cccccc">colorControl</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">node.addColorControl(</span> <span style="color: #cd0000">&quot;uColor&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.4</span> <span style="color: #cccccc">);</span>
+<span style="color: #cccccc">colorControl.setName(</span><span style="color: #cd0000">&quot;Color&quot;</span><span style="color: #cccccc">);</span>
+
+<span style="color: #cccccc">node.finishAdding();</span>
+</pre>
+  <!-- end of hilite.me -->
           </div>
       </div>
-      
+
+
+       <p></p>
+       <p></p>
+       <p></p>
+       <h2 class="center">HexPixelate Discussion</h2>
+       <!-- add &username= -->
+       <iframe class="center" src="https://discord.com/widget?id=827792740359340103&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+   
+
     </section>
   </main>
   <footer>
     <p>
-      Copyright © 2021 Mewatools. Source code is available under the permissive
+      Copyright © 2021 <a href='#'>Mewatools</a>. Source code is available under the permissive
       <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0</a> license.
     </p>
   </footer>

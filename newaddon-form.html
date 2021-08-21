@@ -12,13 +12,11 @@
       <h1>Mewa Web Store</h1>
     </div>
 
-</br>
-<a class="link-button font-small" onclick="#" >Back to browse</a>
-<p>john@gmail.com | <a href='logout.php'>Logout</a>Publisher: John Nothingate
-           <form name = 'publisherbuttonsform' action='index.php' method = 'post' enctype = 'multipart/form-data' >
-           <input type='submit' value='New Addon' name='OnNewAddons'>
-           <input type='submit' value='My Addons' name='OnMyAddons'>
-           </form></p>
+  <a href='#'>John@gmail.com</a>  
+  <a class="link-button font-small" href="#">Browse</a>
+  <a class="link-button font-small" href="#">New Addon</a>
+  <a class="link-button font-small" href="#">My Addons</a>
+  <a href='#'>Logout</a>
 
 
     </header>
@@ -42,18 +40,26 @@
         </tr>
                 
         <tr>
-        <td style="text-align:right;vertical-align:top;"><strong>Description</strong><br>Accepts html source</td>
+        <td style="text-align:right;vertical-align:top;"><strong>Brief Description</strong></td>
         <td> <textarea name="description" cols="80" rows="5" required=""></textarea>   </td>
         </tr>
         
         <tr>
-        <td style="text-align:right;vertical-align:top;"><strong>More Details</strong><br>This is optional<br>It adds a "Show More" button<br>Leave empty to disable</td>
-        <td> <textarea name="extra_html" cols="80" rows="5">&lt;center&gt; My Patreon page &lt;p&gt;&lt;a href='www.patreon.com/2'&gt;FX Artist&lt;/a&gt; &lt;/p&gt;&lt;/center&gt;</textarea>   </td>
+        <td style="text-align:right;vertical-align:top;"><strong>Usage</strong><br>Information shown when</br> clicking on "See More" button</td>
+        <td> <textarea name="extra_html" cols="80" rows="5">&lt;center&gt; This is an embedded &lt;p&gt;&lt;a href='https://www.youtube.com/embed/Il5K32ktx8o'&gt;youtube video&lt;/a&gt; &lt;/p&gt;&lt;/center&gt;</textarea>   </td>
         </tr>
         
         <tr>
         <td style="text-align:right;vertical-align:top;"><strong>Script</strong><br>Content of the Mewa script file<br><a href="https://en.wikibooks.org/wiki/Mewa_User%27s_Guide/Extending_Mewa_with_custom_shaders">More on Mewa scripts</a></td>
         <td> <textarea name="mfx" cols="80" rows="10" required=""></textarea> </td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:right;vertical-align:top;"><strong>Discord Widget</strong><br>A Discord Premade widget can be</br> found in your Discord server settings</td>
+        <td> <textarea name="discord_widget" cols="80" rows="5">
+&lt;iframe src="https://discord.com/widget?id=827792740359340103&amp;theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"&gt;&lt;/iframe&gt;
+        </textarea>   
+        </td>
         </tr>
         
         <tr>
@@ -63,7 +69,7 @@
         
         <tr>
         <td style="text-align:right"><strong>Show source</strong></td>
-        <td><input type="checkbox" name="show_source" value="Yes" checked="">  Adds button to show source </td>
+        <td><input type="checkbox" name="show_source" value="Yes" checked=""></td>
         </tr>
         
          <tr>
