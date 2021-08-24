@@ -27,3 +27,7 @@ Open the test pages to check the current state of the Mewa WebStore template.
 ### Considerations
 
 Behind the Mewa Webstore is a PHP server that generates the WebStore HTML. To facilitate the integration with the php server, HTML source should be kept as simple and minimal as possible.
+
+### TODO
+- Define a limit to the number of characters that can be used in the addon brief description. This limit will make sure that entries in [addon-list.html](addon-list.html) are all kept with the same height;
+- Write a javascript function to generate highlighted text from the source-code text in [addon-details.html](addon-details.html) 
