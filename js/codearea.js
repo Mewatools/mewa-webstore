@@ -1,3 +1,4 @@
+// https://codepen.io/goulart81/pen/ExQygWx
 function replaceBreaksWithParagraphs(input) {
     input = filterEmpty(input.split('\n')).join('</p><p>');
     return '<p>' + input + '</p>';
@@ -21,10 +22,10 @@ window.addEventListener("DOMContentLoaded", function () {
   var textarea = document.getElementById('code-viewer');
   textarea.innerHTML = replaceBreaksWithParagraphs (textarea.innerHTML);
   
-  // color comments
+  // color strings
   textarea.innerHTML = textarea.innerHTML.replace(
         new RegExp(/"([^"]+)"/g, 'gi'),
-        '<b style="color:#ddf">$&</b>'
-    );
+        '<b style="color:#ddf">$&</b>');
+    
   
 })
