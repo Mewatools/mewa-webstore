@@ -38,7 +38,7 @@
           <h2>HexPixelate</h2>
           <h5>by <em>Mewatools</em></h5>
           <p>This node Pixelates an image using an hexagonal pattern. The size of the pixel is adjustable.</p>
-          <p><a class="link-button font-small" href="https://hackmd.io/@k--5gSDXTFSeySUer_0emQ/BJrtjClWF">Go To User Guide</a></p>
+          <p><a class="link-button font-small" href="https://hackmd.io/@k--5gSDXTFSeySUer_0emQ/BJrtjClWF">User Guide</a></p>
           <!--The likes button should be an icon-->
           <p>Likes: 1</p>
         </div>
@@ -72,55 +72,58 @@
 
 <details open>
 <summary>Script</summary>
-       <!-- HTML generated using hilite.me (style: VIM) -->
-          <div style="background: #2E4053; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-<pre style="margin: 0; line-height: 125%"><span style="color: #000080">// Adapted to Mewa by Hugo 2021 (hugo@mewatools.com)</span>
-<span style="color: #000080">// Ether by nimitz 2014 (twitter: @stormoid)</span>
-<span style="color: #000080">// https://www.shadertoy.com/view/MsjSW3</span>
-<span style="color: #000080">// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</span>
-<span style="color: #000080">// Contact the author for other licensing options</span>
 
-<span style="color: #cccccc">shaderSource</span> <span style="color: #3399cc">=</span> <span style="color: #cd0000">&quot;</span>
-<span style="color: #cd0000">    #define t iTime</span>
-<span style="color: #cd0000">    mat2 m(float a){float c=cos(a), s=sin(a);return mat2(c,-s,s,c);}</span>
-<span style="color: #cd0000">    float map(vec3 p){</span>
-<span style="color: #cd0000">        p.xz*= m(t*0.4);p.xy*= m(t*0.3);</span>
-<span style="color: #cd0000">        vec3 q = p*2.+t;</span>
-<span style="color: #cd0000">        return length(p+vec3(sin(t*0.7)))*log(length(p)+1.) + sin(q.x+sin(q.z+sin(q.y)))*0.5 - 1.;</span>
-<span style="color: #cd0000">    }</span>
-<span style="color: #cd0000">    </span>
-<span style="color: #cd0000">    void mainImage( out vec4 fragColor, in vec2 fragCoord ){	</span>
-<span style="color: #cd0000">    	vec2 p = fragCoord.xy - vec2(.9,.5);</span>
-<span style="color: #cd0000">        vec3 cl = vec3(0.);</span>
-<span style="color: #cd0000">        float d = uDelta; // initial value 2.5</span>
-<span style="color: #cd0000">        for(int i=0; i&lt;=5; i++)	{</span>
-<span style="color: #cd0000">    		vec3 p = vec3(0,0,5.) + normalize(vec3(p, -1.))*d;</span>
-<span style="color: #cd0000">            float rz = map(p);</span>
-<span style="color: #cd0000">    		float f =  clamp((rz - map(p+.1))*0.5, -.1, 1. );</span>
-<span style="color: #cd0000">            vec3 l = uColor + vec3(5., 2.5, 3.)*f;</span>
-<span style="color: #cd0000">            cl = cl*l + smoothstep(2.5, .0, rz)*.7*l;</span>
-<span style="color: #cd0000">    		d += min(rz, 1.);</span>
-<span style="color: #cd0000">    	}</span>
-<span style="color: #cd0000">        fragColor = vec4(cl, 1.);</span>
-<span style="color: #cd0000">    }&quot;</span><span style="color: #cccccc">;</span>
+          <div id="min-code-editor" style="background: #2E4053; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+<pre style="margin: 0; line-height: 125%">
+	
+// Adapted to Mewa by Hugo 2021 (hugo@mewatools.com)
+// Ether by nimitz 2014 (twitter: @stormoid)
+// https://www.shadertoy.com/view/MsjSW3
+// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+// Contact the author for other licensing options
+
+shaderSource = "
+    #define t iTime
+    mat2 m(float a){float c=cos(a), s=sin(a);return mat2(c,-s,s,c);}
+    float map(vec3 p){
+        p.xz*= m(t*0.4);p.xy*= m(t*0.3);
+        vec3 q = p*2.+t;
+        return length(p+vec3(sin(t*0.7)))*log(length(p)+1.) + sin(q.x+sin(q.z+sin(q.y)))*0.5 - 1.;
+    }
+    
+    void mainImage( out vec4 fragColor, in vec2 fragCoord ){	
+    	vec2 p = fragCoord.xy - vec2(.9,.5);
+        vec3 cl = vec3(0.);
+        float d = uDelta; // initial value 2.5
+        for(int i=0; i<=5; i++)	{
+    		vec3 p = vec3(0,0,5.) + normalize(vec3(p, -1.))*d;
+            float rz = map(p);
+    		float f =  clamp((rz - map(p+.1))*0.5, -.1, 1. );
+            vec3 l = uColor + vec3(5., 2.5, 3.)*f;
+            cl = cl*l + smoothstep(2.5, .0, rz)*.7*l;
+    		d += min(rz, 1.);
+    	}
+        fragColor = vec4(cl, 1.);
+    }";
 
 
-<span style="color: #cccccc">node</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">ShaderNode(</span> <span style="color: #cccccc">shaderSource,</span> <span style="color: #cd0000">&quot;Ether&quot;</span> <span style="color: #cccccc">);</span>
-<span style="color: #cccccc">node.setInputMapping(</span><span style="color: #cd00cd">0</span><span style="color: #cccccc">,</span> <span style="color: #cd0000">&quot;iResolution&quot;</span><span style="color: #cccccc">);</span>
-<span style="color: #cccccc">node.setHelpPage(</span><span style="color: #cd0000">&quot;https://www.shadertoy.com/view/MsjSW3&quot;</span><span style="color: #cccccc">);</span>
+node = ShaderNode( shaderSource, "Ether" );
+node.setInputMapping(0, "iResolution");
+node.setHelpPage("https://www.shadertoy.com/view/MsjSW3");
 
-<span style="color: #000080">// controls</span>
-<span style="color: #cccccc">deltaControl</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">node.addFloatControl(</span><span style="color: #cd0000">&quot;uDelta&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">2.5</span><span style="color: #cccccc">);</span>
-<span style="color: #cccccc">deltaControl.setName(</span><span style="color: #cd0000">&quot;Delta&quot;</span><span style="color: #cccccc">);</span>
-<span style="color: #cccccc">deltaControl.setStep(</span><span style="color: #cd00cd">0.01</span><span style="color: #cccccc">);</span>
-<span style="color: #cccccc">deltaControl.setRange(</span><span style="color: #3399cc">-</span><span style="color: #cd00cd">2</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">7</span><span style="color: #cccccc">);</span>
+// controls
+deltaControl = node.addFloatControl("uDelta", 2.5);
+deltaControl.setName("Delta");
+deltaControl.setStep(0.01);
+deltaControl.setRange(-2, 7);
 
-<span style="color: #cccccc">colorControl</span> <span style="color: #3399cc">=</span> <span style="color: #cccccc">node.addColorControl(</span> <span style="color: #cd0000">&quot;uColor&quot;</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.1</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.3</span><span style="color: #cccccc">,</span> <span style="color: #cd00cd">0.4</span> <span style="color: #cccccc">);</span>
-<span style="color: #cccccc">colorControl.setName(</span><span style="color: #cd0000">&quot;Color&quot;</span><span style="color: #cccccc">);</span>
+colorControl = node.addColorControl( "uColor", 0.1, 0.3, 0.4 );
+colorControl.setName("Color");
 
-<span style="color: #cccccc">node.finishAdding();</span>
+node.finishAdding();
+	
 </pre>
-  <!-- end of hilite.me -->
+
 </div>
 </details>
 
@@ -134,7 +137,7 @@
       <details open>
       <summary>File Details</summary>
       <ul>
-		  <li>Last Updated: April 26th, 2021</li>
+		  <li>Last Update: April 26th, 2021</li>
 		  <li>Category: Filter</li>
 		  <li>License: CC0</li>
 		  </ul>
