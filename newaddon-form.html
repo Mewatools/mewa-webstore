@@ -12,49 +12,47 @@
       <h1>Mewa Web Store</h1>
     </div>
 
-  <a href='#'>John@gmail.com</a>  
+
   <a class="link-button font-small" href="#">Browse</a>
-  <a class="link-button font-small" href="#">New Addon</a>
-  <a class="link-button font-small" href="#">My Addons</a>
+  <a href='#'>John@gmail.com</a>  
   <a href='#'>Logout</a>
+  <a href="#">New Addon</a>
+  <a href="#">My Addons</a>
+
+
+
 
 
     </header>
+    
+    
+    <h3>New Addon</h3>
+    
     <main>
 
    
-		<p>
-	 <form name="newform" action="http://localhost/tools/index.php" method="post" enctype="multipart/form-data">
-        <div class="container">
-        <table style="border:0px solid black;margin-left:auto;margin-right:auto;">
-			
-	    <tbody><tr><td colspan="2" style="width:70%; text-align: center;">
-		   <p>
-        Have you created a <a href="https://en.wikibooks.org/wiki/Mewa_User%27s_Guide/Extending_Mewa_with_custom_shaders">Mewa script</a>?<br>To publish it all you need to do is fill the form below.<br>
-        </p><br>
-        </td></tr>
-			
-        <tr>
-        <td style="text-align:right"><strong>Name</strong><br>Usually a Mewa node name</td>
-        <td><input type="text" name="node_name" value="" required="">   </td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:right"><strong>License</strong></td>
-        <td>
-        <select name="license" id="license">
-          <option value="cc">Public Domain (CC0)</option>
-          <option value="cc-by">Attribution (CC BY)</option>
-          <option value="cc-bysa">Attribution-ShareAlike (CC BY-SA)</option>
-        </select>
-                See <a href="https://en.wikipedia.org/wiki/Creative_Commons_license">Creative_Commons_license</a> to know more
-        </td>
-        </tr> 
-
-        <tr>
-        <td style="text-align:right"><strong>Category</strong></td>
-        <td>
-        <select name="category" id="category">
+		<form name = "newform" action="index.php" method = "post" enctype = "multipart/form-data" >
+	
+	<label for="node_name">Name</label>
+	<input type="text" id="node_name" name="node_name" value="" required="" placeholder="node name">
+	
+	
+	
+	
+	<fieldset>
+    <legend>License</legend>
+    <div><input type="radio" id="ccby" name="license" value="ccby" checked ><label for="ccby">Free</label></div>
+    <div><input type="radio" id="ccbysa" name="license" value="ccbysa" ><label for="ccbysa">Free WITH royalties from commercial derivatives</label></div>
+    <div><input type="radio" id="ccbysand" name="license" value="ccbysand" ><label for="ccbysand">Commercial</label>
+    </div>
+	</fieldset>
+	
+	
+	
+	
+	
+	<label for="category">Category</label>
+	  <select name="category" id="category">
           <option value="deep">Deep</option>
           <option value="image">Image</option>
           <option value="particles">Particles</option>
@@ -73,47 +71,37 @@
           <option value="utilities">Utilities</option>
           <option value="other">Other</option>
         </select>
-        </td>
-        </tr> 
-    
-        <tr>
-        <td style="text-align:right;vertical-align:top;"><strong>Description</strong><br>Max 140 characters</td>
-        <td> <textarea name="description" cols="80" rows="5" required=""></textarea>   </td>
-        </tr>
         
-        <tr>
-        <td style="text-align:right"><strong>Documentation Link</strong></td>
-        <td><input type="text" name="doc_link" value="" required="">   </td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:right;vertical-align:top;"><strong>Script</strong><br>Content of the Mewa script file<br><a href="https://en.wikibooks.org/wiki/Mewa_User%27s_Guide/Extending_Mewa_with_custom_shaders">More on Mewa scripts</a></td>
-        <td> <textarea name="mfx" cols="80" rows="10" required=""></textarea> </td>
-        </tr>
+        </br>
+        <label for="description">Description (max 140 characters)</label>
+        <textarea id="description" name="description" style="width: 100%;" rows="5" required="" placeholder="Brief addon description"></textarea>
+	
+	<label for="doc_link">Documentation Link (e.g. <a href="https://hackmd.io/@k--5gSDXTFSeySUer_0emQ/HJg0W_rfWY">HexPixelate</a>)</label>
+	<input type="text" id="doc_link" name="doc_link" value="" required="" placeholder="https://">
+	
+	</br>
+	   <label for="mfx">Script</label>
+        <textarea id="mfx" name="mfx" style="width: 100%;" rows="10" required="" placeholder="paste your mewa script here ..."></textarea>
+	
+	
+		<label for="tooltip">Tool tip</label>
+	<input type="text" id="tooltip" name="tooltip" value="" required="" placeholder="One line description that will be shown in Mewa status bar">
+	
 
-        <tr>
-        <td style="text-align:right"><strong>Tool tip</strong></td>
-        <td><input type="text" name="tooltip" value="" required="">  One line description that will be shown inside Mewa </td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:right"><strong>Show source</strong></td>
-        <td><input type="checkbox" name="show_source" value="Yes" checked=""></td>
-        </tr>
-        
-         <tr>
-        <td style="text-align:right;"><strong>Image</strong><br>png format with 512x256 size</td>
-        <td> <input type="file" name="fileToUpload" id="fileToUpload"> </td>
-        </tr>
-        
-        <tr><td colspan="2" align="center">
-        <input type="submit" value="Submit" name="OnSubmitNew">
-        </td></tr>
-        
-        </tbody></table>
-        </div>    
+	</br>
+	</br>
+	<label for="fileToUpload">Png image with 512x256 size</label>
+	<input type="file" id="fileToUpload" name="fileToUpload" >
+	</br>
+	</br>
+	  <input type="submit" value="Submit" name="OnSubmitNew">
+	
+	
+      
+         
         </form>  
- </p>
+		
+		
 	
 	 </main>
     <footer></footer>
