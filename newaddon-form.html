@@ -42,12 +42,14 @@
 	<fieldset>
     <legend>License</legend>
 	
-    <div><input type="radio" id="ccby" name="license" value="ccby" checked ><label for="ccby">Free</label> </div>
-    <div><input type="radio" id="ccbysand" name="license" value="ccbysand" ><label for="ccbysand">Commercial</label>
+    <div><input type="radio" id="free_license" name="license" value="free_license" checked ><label for="free_license">Free</label>
+	<input type="checkbox" id="royalties" name="royalties" checked><label for="royalties">I would like to receive royalties from commercial derivatives</label>
+	</div>
+    <div><input type="radio" id="comercial_license" name="license" value="comercial_license" ><label for="comercial_license">Commercial</label>
 	<input type="text" id="price" name="price" value="" required="" placeholder="price in USD">
 	</div>
 	<div><input type="radio" id="ccbysa" name="license" value="ccbysa" ><label for="ccbysa">This is a derivative work</label>
-	<input type="text" id="original_work1" name="original_work1" value="" required="" placeholder="original addon name">
+	<input type="text" id="original_work1" name="original_work1" value="" required="" placeholder="names of the addons used ...">
 	</div>
     
 	</fieldset>
