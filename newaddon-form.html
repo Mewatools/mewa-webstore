@@ -3,6 +3,7 @@
     
     <title>Mewa WebStore</title>
     <link rel="stylesheet" type="text/css" href="style/tools.css">
+    <link rel="stylesheet" type="text/css" href="style/form.css">
   </head>
   <body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
     <header>
@@ -42,13 +43,13 @@
 	<fieldset>
     <legend>License</legend>
 	
-    <div><input type="radio" id="free_license" name="license" value="free_license" checked ><label for="free_license">Free</label>
+    <div class="form-row"><input type="radio" id="free_license" name="license" value="free_license" checked ><label for="free_license">Free</label>
 	<input type="checkbox" id="royalties" name="royalties" checked><label for="royalties">I would like to receive royalties from commercial derivatives</label>
 	</div>
-    <div><input type="radio" id="comercial_license" name="license" value="comercial_license" ><label for="comercial_license">Commercial</label>
+    <div class="form-row"><input type="radio" id="comercial_license" name="license" value="comercial_license" ><label for="comercial_license">Commercial</label>
 	<input type="text" id="price" name="price" value="" required="" placeholder="price in USD">
 	</div>
-	<div><input type="radio" id="ccbysa" name="license" value="ccbysa" ><label for="ccbysa">This is a derivative work</label>
+	<div class="form-row"><input type="radio" id="ccbysa" name="license" value="ccbysa" ><label for="ccbysa">This is a derivative work</label>
 	<input type="text" id="original_work1" name="original_work1" value="" required="" placeholder="names of the addons used ...">
 	</div>
     
@@ -57,7 +58,7 @@
 	
 	
 	
-	
+	<div class="form-row">
 	<label for="category">Category</label>
 	  <select name="category" id="category">
           <option value="deep">Deep</option>
@@ -78,34 +79,34 @@
           <option value="utilities">Utilities</option>
           <option value="other">Other</option>
         </select>
-        
-        </br>
+        </div>
+       
+       <div class="form-row">
         <label for="description">Description (max 140 characters)</label>
         <textarea id="description" name="description" style="width: 100%;" rows="5" required="" placeholder="Brief addon description"></textarea>
-	
+	 </div>
+	 
+	  <div class="form-row">
 	<label for="doc_link">Documentation Link (e.g. <a href="https://hackmd.io/@k--5gSDXTFSeySUer_0emQ/HJg0W_rfWY">HexPixelate</a>)</label>
 	<input type="text" id="doc_link" name="doc_link" value="" required="" placeholder="https://">
-	
-	</br>
+	 </div>
+	 
+	 <div class="form-row">
 	   <label for="mfx">Script</label>
         <textarea id="mfx" name="mfx" style="width: 100%;" rows="10" required="" placeholder="paste your mewa script here ..."></textarea>
+	 </div>
 	
-	
+	<div class="form-row">
 		<label for="tooltip">Tool tip</label>
 	<input type="text" id="tooltip" name="tooltip" value="" required="" placeholder="One line description that will be shown in Mewa status bar">
-	
+	 </div>
 
-	</br>
-	</br>
+	<div class="form-row">
 	<label for="fileToUpload">Png image with 512x256 size</label>
 	<input type="file" id="fileToUpload" name="fileToUpload" >
-	</br>
-	</br>
+	</div>
 	  <input type="submit" value="Submit" name="OnSubmitNew">
 	
-	
-      
-         
         </form>  
 		
 		
