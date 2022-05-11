@@ -4,6 +4,7 @@
     <title>Mewa WebStore</title>
     <link rel="stylesheet" type="text/css" href="style/tools.css">
     <link rel="stylesheet" type="text/css" href="style/form.css">
+    <link rel="stylesheet" type="text/css" href="style/dropdown.css">
   </head>
   <body data-new-gr-c-s-check-loaded="14.1007.0" data-gr-ext-installed="">
     <header>
@@ -14,12 +15,22 @@
     </div>
 
 
-  <a class="link-button font-small" href="#">Browse</a>
-  <a href='#'>John@gmail.com</a>  
-  <a href='#'>Logout</a>
+    <div class="dropdown">
+  <button class="dropbtn">VfxLtd</button>
+  <div class="dropdown-content">
   <a href="#">New Addon</a>
   <a href="#">My Addons</a>
-
+  </div>
+  </div>
+  
+  <div class="dropdown">
+  <button class="dropbtn">John@gmail.com</button>
+  <div class="dropdown-content">
+  <a href="#">Profile</a>
+  <a href="#">Logout</a>
+  </div>
+  </div>
+  
 
 
 
@@ -34,9 +45,10 @@
    
 		<form name = "newform" action="index.php" method = "post" enctype = "multipart/form-data" >
 	
+	<div class="form-row">
 	<label for="node_name">Name</label>
 	<input type="text" id="node_name" name="node_name" value="" required="" placeholder="node name">
-	
+	</div>
 	
 	
 	
@@ -109,13 +121,14 @@
 	
         </form>  
 		
-		
 	
 	 </main>
-    <footer></footer>
-    <script type="text/javascript" async="" src="./newaddon-form_files/analytics.js"></script><script async="" src="./newaddon-form_files/js"></script>
-    <script src="./newaddon-form_files/index.js"></script>
-  
+    <footer>
+		    <p>
+      Copyright © 2021-2022 <a href='http://www.mewatools.com/'>Mewatools</a>. Source code is available under the permissive
+      <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0</a> license.
+    </p>
+    </footer>
 
 
 </body></html>
