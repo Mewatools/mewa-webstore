@@ -13,6 +13,7 @@
   <meta property="og:title" content="Mewa Web Store" />
   <meta property="og:description" content="List of Mewa Add-ons" />
   <link rel="stylesheet" type="text/css" href="style/tools.css" />
+  <link rel="stylesheet" type="text/css" href="style/login.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/fira-code.min.css" />
   <link rel="stylesheet" href="style/codearea.css" />
   <script src="js/codearea.js"></script>
@@ -27,7 +28,32 @@
 
 
 Become a publisher
-  <a class="link-button font-small" href="#">Sign-In</a>
+  <a class="link-button font-small" href="javascript:void(0);" onclick="document.getElementById('id01').style.display='block'">Sign In</a>
+ 
+ 
+ 
+ 
+ 
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <a href="#"> <img id="patreon-image" src="assets/login_with_discord.png" ></a>
+    </div>
+    <div class="logincontainer">
+      <label for="uemail"><b>Sign in using your email address:</b></label>
+      <input type="text" placeholder="e.g., yourname@yourhost.com" name="uemail" required>
+      <button type="submit">Sign In</button>
+    </div>
+  </form>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
   </header>
@@ -147,6 +173,20 @@ node.finishAdding();
       <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0</a> license.
     </p>
   </footer>
+  
+  <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
 </body>
 
 </html>
