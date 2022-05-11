@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function () {
   // color strings
   textarea.innerHTML = textarea.innerHTML.replace(
         new RegExp(/"([^"]+)"/g, 'gi'),
-        '<b style="color:#ddf">$&</b>');
+        '<b style="color:#AEB6BF">$&</b>');
     
   
 })
