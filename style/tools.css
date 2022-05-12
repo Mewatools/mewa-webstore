@@ -659,8 +659,8 @@ main {
   }
 
   details {
-    width: 15rem;
-    margin-right: 3rem;
+    //width: 15rem;
+    //margin-right: 1rem;
   }
 
   .addon-details-buttons {
