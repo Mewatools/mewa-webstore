@@ -28,25 +28,13 @@
 
 
 Become a publisher
-  <a class="link-button font-small" href="javascript:void(0);" onclick="document.getElementById('id01').style.display='block'">Sign In</a>
+  <a id="loginButton" class="link-button font-small" href="javascript:void(0);" >Sign In</a>
  
  
  
  
  
-<div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <a href="#"> <img id="patreon-image" src="assets/login_with_discord.png" ></a>
-    </div>
-    <div class="logincontainer">
-      <label for="uemail"><b>Sign in using your email address:</b></label>
-      <input type="text" placeholder="e.g., yourname@yourhost.com" name="uemail" required>
-      <button type="submit">Sign In</button>
-    </div>
-  </form>
-</div>
+
  
  
  
@@ -57,7 +45,7 @@ Become a publisher
  
 
   </header>
-  <main class="flex-col">
+  <main id="idMain" class="flex-col">
     <section class="mewa-scripts-list">
       <div class="item-card card-divider less-spacing" id="hexpixelate-card">
         <img class="shadow-lg" src="uploads/HexPixelate.png" />
@@ -180,13 +168,18 @@ node.finishAdding();
   </footer>
   
   <script>
-// Get the modal
-var modal = document.getElementById('id01');
+window.onload = function() {
+    document.getElementById("loginButton").onclick = function showLoginPage() {
+        document.getElementById('idMain').innerHTML=
+		'<div id="loginPage" class="loginpage">' + 
+  '<form action="/action_page.php" method="post">' + 
+    '<div class="logincontainer">' + 
+      '<label for="uemail"><b>Sign in using your email address:</b></label>' + 
+      '<input type="text" placeholder="e.g., yourname@yourhost.com" name="uemail" required>' + 
+      '<button type="submit">Sign In</button>' + 
+    '</div></form></div>'
+		;
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
     }
 }
 </script>
