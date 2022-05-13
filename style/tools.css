@@ -148,6 +148,7 @@ summary::-webkit-details-marker {
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   border: 1px solid white;
+  margin: auto;
 }
 
 .warning-button {
@@ -196,37 +197,55 @@ summary::-webkit-details-marker {
 header {
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+ margin-left: 2rem;
+margin-right: 2rem;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+ // justify-content: center;
+//  align-items: center;
   flex-direction: row;
+ 
 }
 
 header h1 {
   font-weight: medium;
 }
 
+
+header img {
+  //margin-right: 1rem;
+  margin : auto 20px; // vertically aligned, 20px horizontal margin
+}
+
+header div {
+//	background: #9b399d;
+
+  display: flex;
+  //justify-content: space-around;
+ // align-items: center;
+  flex-direction: row;
+ // margin-right: 20rem;
+}
+
+header .rightGroup {
+	margin : auto 20px; // vertically aligned, 20px is the same as header img
+justify-content: flex-end;
+margin-left: auto; // align div to left
+
+}
+
+
+/*
+header .adjusted-margins {
+  margin-right: 30rem;
+}*/
+
 footer {
   padding-bottom: 4rem;
   display: flex;
   justify-content: center;
   color: white;
-}
-
-header img {
-  margin-right: 1rem;
-}
-
-header div {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  margin-right: 20rem;
-}
-
-header .adjusted-margins {
-  margin-right: 30rem;
 }
 
 .item-card-description {
@@ -329,7 +348,7 @@ main {
 }
 
 .item-card img {
-  margin-right: 4rem;
+  //margin-right: 4rem;
   border-radius: 0.5rem;
 }
 
@@ -360,14 +379,16 @@ main {
     //color: #ffffff;
     font-size: 2rem;
   }
-
+/*
   #patreon-image {
     display: none;
   }
+*/
 
+/*
   .link-button {
     margin: auto;
-  }
+  }*/
 
   .card-divider {
     padding-bottom: 6rem;
@@ -377,7 +398,7 @@ main {
   footer p {
     max-width: 20rem;
   }
-
+/*
   header {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -401,7 +422,7 @@ main {
     max-height: 12.5rem;
     align-self: center;
   }
-
+*/
   .mewa-scripts-list {
     display: flex;
     flex-direction: column;
@@ -430,13 +451,13 @@ main {
     padding-bottom: 1.5rem;
     margin: 0;
   }
-
+/*
   .item-card img {
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-  }
+  }*/
 
   h2 {
     font-size: 2rem;
@@ -482,7 +503,7 @@ main {
     font-size: 1.5rem;
   }
 
-  h1,
+  //h1,
   h2,
   h3,
   h4,
@@ -491,15 +512,17 @@ main {
     text-align: center;
     line-height: 1.5;
   }
-
+/*
   img {
     max-height: 25rem;
     align-self: center;
   }
+*/
 
+/*
   .link-button {
     margin: auto;
-  }
+  }*/
 
   .card-divider {
     border-bottom: 0.5px solid #7c7c7c;
@@ -508,7 +531,7 @@ main {
   footer p {
     max-width: 30rem;
   }
-
+/*
   header div {
     display: flex;
     justify-content: space-around;
@@ -518,7 +541,7 @@ main {
 
   header .adjusted-margins {
     margin-right: 6rem;
-  }
+  }*/
 
   .mewa-scripts-list {
     display: flex;
@@ -548,13 +571,13 @@ main {
     padding-bottom: 1.5rem;
     margin: 0;
   }
-
+/*
   .item-card img {
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;
-  }
+  }*/
 
   h2 {
     font-size: 2rem;
@@ -629,7 +652,7 @@ main {
   .font-small {
     font-size: 0.7rem;
   }
-
+/*
   header div {
     display: flex;
     justify-content: space-around;
@@ -646,10 +669,12 @@ main {
     max-height: 12.5rem;
     align-self: center;
   }
-
+*/
   .item-card-description {
     margin-left: 1rem;
   }
+  
+
 
   .source-code-editor {
     display: none;
