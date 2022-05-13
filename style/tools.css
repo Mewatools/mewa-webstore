@@ -139,7 +139,7 @@ summary::-webkit-details-marker {
 }
 
 .link-button {
-  //color: #ffffff;
+  color: #ffffff;
   background-color: transparent;
   text-align: center;
   text-decoration: none;
@@ -255,12 +255,12 @@ main {
 }
 
 #pagination-buttons a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
 }
 
 #pagination-buttons button {
-  //color: #ffffff;
+  color: #ffffff;
   background-color: transparent;
   text-align: center;
   text-decoration: none;
