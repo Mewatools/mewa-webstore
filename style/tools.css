@@ -1,4 +1,5 @@
 body {
+	color: #dddddd;
   background: #2b343d;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -73,7 +74,7 @@ a {
 h1,
 h2,
 h3 {
-  color: #ffffff;
+  //color: #ffffff;
   font-size: 2.25rem;
 }
 
@@ -138,7 +139,7 @@ summary::-webkit-details-marker {
 }
 
 .link-button {
-  color: #ffffff;
+  //color: #ffffff;
   background-color: transparent;
   text-align: center;
   text-decoration: none;
@@ -259,7 +260,7 @@ main {
 }
 
 #pagination-buttons button {
-  color: #ffffff;
+  //color: #ffffff;
   background-color: transparent;
   text-align: center;
   text-decoration: none;
@@ -312,7 +313,7 @@ main {
 }
 
 .item-card {
-  color: #ffffff;
+  //color: #ffffff;
   display: flex;
   justify-content: left;
   flex-direction: row;
@@ -356,7 +357,7 @@ main {
 /* Small Screens < 768px */
 @media screen and (max-width: 768px) {
   h1 {
-    color: #ffffff;
+    //color: #ffffff;
     font-size: 2rem;
   }
 
@@ -408,7 +409,7 @@ main {
   }
 
   .item-card {
-    color: #ffffff;
+    //color: #ffffff;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -477,7 +478,7 @@ main {
 /* Medium Screens 768px to 1024px */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   h1 {
-    color: #ffffff;
+    //color: #ffffff;
     font-size: 1.5rem;
   }
 
@@ -526,7 +527,7 @@ main {
   }
 
   .item-card {
-    color: #ffffff;
+   // color: #ffffff;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -604,7 +605,7 @@ main {
 /* Large Screens 1024px to 1280px */
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   h1 {
-    color: #ffffff;
+   // color: #ffffff;
     font-size: 2rem;
   }
 
