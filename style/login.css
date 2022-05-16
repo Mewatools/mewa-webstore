@@ -1,4 +1,13 @@
 
+.loginbtn {
+	color: #dddddd;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+  cursor: pointer;
+
+}
 
 .logincontainer {
 
@@ -6,10 +15,11 @@
 
 
 .loginpage {
-  
+  width: 80%;
  border: 1px solid #888;
+ margin: 20px auto;
  // background-color: #fefefe;
 //margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  padding: 60px 30px 30px 30px;
+  padding: 30px 30px 30px 30px;
 }
 
