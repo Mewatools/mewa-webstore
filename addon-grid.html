@@ -4,19 +4,21 @@
 <style>
 
  main {
-        background-color: red;
        margin: 30px; // around grid
-    }
+ }
     
-.flex-container {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
   background-color: yellow;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
 }
 
-.flex-container > div {
+.grid-container > div {
   background-color: green;
-  margin: 10px; // around grid cells
+  //margin: 10px; // an alternative to grid gap is to set a margin around grid cells
+  
 }
 
 img{
@@ -24,6 +26,16 @@ img{
         max-height: 100%;
         display: block; // remove extra space below image
     }
+
+.card {
+    border-radius: 15px;
+   border-bottom: 6px solid red;
+}
+
+.card-img {
+cursor: pointer;
+}
+
 </style>
 </head>
 <body>
@@ -33,16 +45,16 @@ img{
 <p>The idea is to display addons in a grid view</p>
 
 <main>
-<div class="flex-container">
+<div class="grid-container">
   <div>1</div>
-   <div>
-          <img src="uploads/Ether.png" />
+   <div class="card" >
+          <div class="card-img">
+            <img src="uploads/Ether.png" />
+		  </div>
           <div>
             <p>Ether</p>
             <p>by <em>Mewatools</em><p>
             <p>Procedural generated image using distance field</p>
-
-            <!--The likes button should be an icon-->
             <p>Likes: 1</p>
           </div>
         </div>
@@ -55,8 +67,6 @@ img{
             <p>BLA</p>
             <p>by <em>Mewatools</em><p>
             <p>Procedural generated image using distance field</p>
-
-            <!--The likes button should be an icon-->
             <p>Likes: 2</p>
           </div>
         </div>
