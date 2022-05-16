@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ main {
+        background-color: red;
+       margin: 30px; // around grid
+    }
+    
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+  background-color: yellow;
+}
+
+.flex-container > div {
+  background-color: green;
+  margin: 10px; // around grid cells
+}
+
+img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block; // remove extra space below image
+    }
+</style>
+</head>
+<body>
+
+<h1>Work in progress</h1>
+
+<p>The idea is to display addons in a grid view</p>
+
+<main>
+<div class="flex-container">
+  <div>1</div>
+   <div>
+          <img src="uploads/Ether.png" />
+          <div>
+            <p>Ether</p>
+            <p>by <em>Mewatools</em><p>
+            <p>Procedural generated image using distance field</p>
+
+            <!--The likes button should be an icon-->
+            <p>Likes: 1</p>
+          </div>
+        </div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+   <div>
+          <img src="uploads/Ether.png" />
+          <div>
+            <p>BLA</p>
+            <p>by <em>Mewatools</em><p>
+            <p>Procedural generated image using distance field</p>
+
+            <!--The likes button should be an icon-->
+            <p>Likes: 2</p>
+          </div>
+        </div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>  
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>  
+</div>
+</main>
+
+<p>Try resizing the browser window.</p>
+
+</body>
+</html>
+
+
